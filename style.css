@@ -8,7 +8,7 @@ body {
 }
 header {
     width: 50%;
-    margin: 3em auto;
+    margin: 2em auto;
     text-align: center;
 }
 header > h1 {
@@ -32,20 +32,23 @@ header > div {
 }
 
 .container {
+    display: flex;
+    flex-wrap: wrap;
     border: 5px double black;
-    height: 50%;
-    width: 50%;
+    height: 550px;
+    width: 600px;
     margin: auto;
+    gap: 1em;
+    justify-content: center;
     background-color: black;
 }
-.row {
-    margin: auto;
-}
-.row div {
+
+.col {
     border: 1px solid black;
-    background-color: white;
     border-radius: 50%;
-    height: 50px;
+    height: 60px;
+    width: 60px;
+    background-color: white;
 }
 
 .play {
