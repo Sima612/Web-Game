@@ -31,30 +31,27 @@ header > div {
     border-radius: 10px;
 }
 
-.container {
+.grid {
     display: flex;
     flex-wrap: wrap;
-    border: 5px double black;
-    height: 550px;
-    width: 600px;
+    justify-content: space-evenly;
+    border: 1px solid;
     margin: auto;
-    gap: 1em;
-    justify-content: center;
-    background-color: black;
+    height: 400px;
+    width: 500px;
 }
-
-.col {
+.grid div {
     border: 1px solid black;
     border-radius: 50%;
-    height: 60px;
-    width: 60px;
-    background-color: white;
+    height: 65px;
+    width: 65px;
 }
 
-.play {
+
+/* .play {
     border: 5px double black;
     color: red;
     background-color: yellow;
     font-weight: bold;
     margin-top: 10px;
-}
+} */
