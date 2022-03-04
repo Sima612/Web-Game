@@ -7,6 +7,10 @@ img {
     top: 0;
     opacity: 0.8;
 }
+i {
+    color: yellow;
+    padding-top: 5px;
+}
 body {
     width: 100%;
     height: 100%;
@@ -14,17 +18,17 @@ body {
     text-align: center;
 }
 header {
-    width: 30%;
+    width: 25%;
     margin: 1em auto;
 }
 header > h1 {
     color: red;
-    background-color: yellow;
+    background-color: black;
     border-radius: 10px;
     text-align: center;
 }
 header > div h2 {
-    width: 50%;
+    width: 55%;
     text-align: center;
     color: white;
     background-color: black;
@@ -35,6 +39,7 @@ header > div h2 {
 div h2 {
     display: inline-block;
     width: 14%;
+    margin-top: 5px;
 }
 
 .player-one {
@@ -48,18 +53,19 @@ div h2 {
     border-radius: 10px;
 }
 
-.grid {
+.container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    border: 10px double white;
+    border: 10px double black;
     background-color: black;
-    margin: 5px auto 0;
+    margin: 0 auto;
     padding: 10px 10px 0;
-    height: 390px;
+    height: 395px;
     width: 500px;
+    cursor: pointer;
 }
-.grid div {
+.container div {
     border: 3px solid white;
     border-radius: 50%;
     height: 55px;
@@ -70,4 +76,35 @@ div h2 {
 
 .taken:not(.player-one, .player-two) {
     visibility: hidden;
+}
+.btn {
+    position: relative;
+    bottom: 40.8px;
+    right: 270px;
+    margin-top: 1em;
+    background-color: black;
+    color: black;
+    border: 5px solid black;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: 1s;
+    cursor: pointer;
+}
+p {
+    position: relative;
+    bottom: 110px;
+    right: 350px;
+    color: red;
+    font-weight: bold;
+}
+
+.fa-solid:not(.fa-chess-board) {
+    position: relative;
+    bottom: 126px;
+    right: 360px;
+    font-size: 35px;
+    transition: right 2.5s;
+}
+.fa-solid:hover {
+    right: 340px;
 }

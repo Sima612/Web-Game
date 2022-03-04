@@ -7,12 +7,12 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
-        <script src="https://kit.fontawesome.com/d5c091ca29.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script src="app.js"></script>
     </head>
     <body>
         <header>
-            <h1>*** CONNECT FOUR ***</h1>
+            <h1><i class="fa-solid fa-chess-board"></i> *CONNECT FOUR* <i class="fa-solid fa-chess-board"></i></h1>
             <div>
                 <h2>Current Player: <span id="current-player">1</span></h2>
                 <h2>Winner -  <span id="result"></span></h2>
@@ -24,7 +24,7 @@
         <div>
             <h2 class="player-one">PLAYER 1</h2>
             <h2 class="player-two">PLAYER 2</h2>
-            <div class="grid">
+            <div class="container">
                 <div></div>
                 <div></div>
                 <div></div>
@@ -75,8 +75,13 @@
                 <div class="taken"></div>
                 <div class="taken"></div>
             </div>
-        </div>
 
+            <!-- Restarting the game -->
+            <input class="btn" type="button" value="REMATCH" onclick="document.location.reload(true)"> 
+        </div>
+        
+        <p>Press For Rematch</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
     </body>
 
 </html>

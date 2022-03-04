@@ -1,25 +1,27 @@
+
+//Adding DOMContentLoaded which fires when initial HTML document is completely loaded and parsed
 document.addEventListener('DOMContentLoaded', () => {
-    const squares = document.querySelectorAll('.grid div')
+    const container = document.querySelectorAll('.container div')
     const result = document.querySelector('#result')
     const displayCurrentPlayer = document.querySelector('#current-player')
     let currentPlayer = 1
 
-
-    for(let i=0, len = squares.length; i < len; i++)
+    //Looping through the connect 4 container
+    for(let i=0; i < container.length; i++)
 
     (function(index) {
-        //Add an onclick to each square in grid
-        squares[i].onclick = function() {
+        //Add an onclick to each slot in grid
+        container[i].onclick = function() {
             //if slot below current slot is taken, you can go ontop of it
-            if(squares[index + 7].classList.contains('taken') && !squares[index].classList.contains('taken')) {
+            if(container[index + 7].classList.contains('taken') && !container[index].classList.contains('taken')) {
                 if(currentPlayer === 1) {
-                    squares[index].classList.add('taken', 'player-one')
+                    container[index].classList.add('taken', 'player-one')
 
                     //switch to player 2
                     currentPlayer = 2
                     displayCurrentPlayer.innerHTML = currentPlayer
                 } else if (currentPlayer === 2) {
-                    squares[index].classList.add('taken', 'player-two')
+                    container[index].classList.add('taken', 'player-two')
 
                     //switch to player 1
                     currentPlayer = 1
@@ -111,29 +113,29 @@ document.addEventListener('DOMContentLoaded', () => {
           
         //Take 4 values in each winningArrays and put them into square
             for(let y=0; y < winningArrays.length; y++) {
-                const square1 = squares[winningArrays[y][0]]
-                const square2 = squares[winningArrays[y][1]]
-                const square3 = squares[winningArrays[y][2]]
-                const square4 = squares[winningArrays[y][3]]
+                const container1 = container[winningArrays[y][0]]
+                const container2 = container[winningArrays[y][1]]
+                const container3 = container[winningArrays[y][2]]
+                const container4 = container[winningArrays[y][3]]
 
                 //now check those arrays to see if they all have class of player one
-                if(square1.classList.contains('player-one') &&
-                    square2.classList.contains('player-one') &&
-                    square3.classList.contains('player-one') &&
-                    square4.classList.contains('player-one')) {
-                        return result.innerHTML = ('Player One!')
+                if(container1.classList.contains('player-one') &&
+                    container2.classList.contains('player-one') &&
+                    container3.classList.contains('player-one') &&
+                    container4.classList.contains('player-one')) {
+                        result.innerHTML = 'Player One!'
                     }
                     //now check for player two
-                    else if(square1.classList.contains('player-two') &&
-                    square2.classList.contains('player-two') &&
-                    square3.classList.contains('player-two') &&
-                    square4.classList.contains('player-two')) {
-                        return result.innerHTML = 'Player Two!'
+                    else if(container1.classList.contains('player-two') &&
+                    container2.classList.contains('player-two') &&
+                    container3.classList.contains('player-two') &&
+                    container4.classList.contains('player-two')) {
+                        result.innerHTML = 'Player Two!'
                     } 
             }   
     }
 
     //Add eventListener to each square that will trigger connectFour function on click
-    squares.forEach(square => square.addEventListener('click', () => connectFour()))
+    container.forEach(square => square.addEventListener('click', () => connectFour()))
 
 })
