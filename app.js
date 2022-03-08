@@ -124,14 +124,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     container2.classList.contains('player-one') &&
                     container3.classList.contains('player-one') &&
                     container4.classList.contains('player-one')) {
-                        result.innerHTML = 'Player One!'
+                        return result.innerHTML = 'Player One!'
                     }
                     //now check for player two
                 else if(container1.classList.contains('player-two') &&
                     container2.classList.contains('player-two') &&
                     container3.classList.contains('player-two') &&
                     container4.classList.contains('player-two')) {
-                        result.innerHTML = 'Player Two!'
+                        return result.innerHTML = 'Player Two!'
                     }
                 
                     
