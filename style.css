@@ -16,9 +16,10 @@ body {
     height: 100%;
     margin: auto;
     text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 header {
-    width: 25%;
+    width: 22%;
     margin: 1em auto;
 }
 header > h1 {
@@ -57,12 +58,13 @@ div h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    border: 10px double black;
+    border: 10px solid black;
     background-color: black;
     margin: 0 auto;
     padding: 10px 10px 0;
     height: 395px;
     width: 500px;
+    border-radius: 10px;
     cursor: pointer;
 }
 .container div {
@@ -85,14 +87,13 @@ div h2 {
     background-color: black;
     color: black;
     border: 5px solid black;
-    font-weight: bold;
+    width: 75px;
     border-radius: 10px;
-    transition: 1s;
     cursor: pointer;
 }
 p {
     position: relative;
-    bottom: 110px;
+    bottom: 115px;
     right: 350px;
     color: red;
     font-weight: bold;
@@ -100,7 +101,7 @@ p {
 
 .fa-solid:not(.fa-chess-board) {
     position: relative;
-    bottom: 126px;
+    bottom: 131px;
     right: 360px;
     font-size: 35px;
     transition: right 2.5s;

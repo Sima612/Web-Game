@@ -9,19 +9,20 @@ document.addEventListener('DOMContentLoaded', () => {
     //Looping through the connect 4 container
     for(let i=0; i < container.length; i++)
 
-    (function(index) {
+    (function(div) {
+
         //Add an onclick to each slot in grid
         container[i].onclick = function() {
             //if slot below current slot is taken, you can go ontop of it
-            if(container[index + 7].classList.contains('taken') && !container[index].classList.contains('taken')) {
+            if(container[div + 7].classList.contains('taken') && !container[div].classList.contains('taken')) {
                 if(currentPlayer === 1) {
-                    container[index].classList.add('taken', 'player-one')
+                    container[div].classList.add('taken', 'player-one')
 
                     //switch to player 2
                     currentPlayer = 2
                     displayCurrentPlayer.innerHTML = currentPlayer
                 } else if (currentPlayer === 2) {
-                    container[index].classList.add('taken', 'player-two')
+                    container[div].classList.add('taken', 'player-two')
 
                     //switch to player 1
                     currentPlayer = 1
@@ -111,14 +112,14 @@ document.addEventListener('DOMContentLoaded', () => {
             [3,11,19,27]
         ]
           
-        //Take 4 values in each winningArrays and put them into square
+        //Taking 4 values in each winningArrays and put them into square
             for(let y=0; y < winningArrays.length; y++) {
                 const container1 = container[winningArrays[y][0]]
                 const container2 = container[winningArrays[y][1]]
                 const container3 = container[winningArrays[y][2]]
                 const container4 = container[winningArrays[y][3]]
 
-                //now check those arrays to see if they all have class of player one
+                //now we're checking those arrays to see if they all have class of player one
                 if(container1.classList.contains('player-one') &&
                     container2.classList.contains('player-one') &&
                     container3.classList.contains('player-one') &&
@@ -126,16 +127,19 @@ document.addEventListener('DOMContentLoaded', () => {
                         result.innerHTML = 'Player One!'
                     }
                     //now check for player two
-                    else if(container1.classList.contains('player-two') &&
+                else if(container1.classList.contains('player-two') &&
                     container2.classList.contains('player-two') &&
                     container3.classList.contains('player-two') &&
                     container4.classList.contains('player-two')) {
                         result.innerHTML = 'Player Two!'
-                    } 
+                    }
+                
+                    
+                
             }   
     }
 
-    //Add eventListener to each square that will trigger connectFour function on click
+    //Add eventListener to each slot that will trigger connectFour function on click
     container.forEach(square => square.addEventListener('click', () => connectFour()))
 
 })
